@@ -49,7 +49,7 @@ a {
 	@extend .roundborder;
 	height:15px;
 	padding:15px;
-	background:#1abc9c;
+	background:#e74c3c;
 	max-width:$full_width;
 	margin:0 auto;
 	font-family:Dotum;
@@ -162,6 +162,7 @@ a {
 		list-style:none;
 		li.post {
 			@extend .roundborder;
+			text-align:center;
 			overflow:hidden;
 			float:left;
 			margin-top:10px;
