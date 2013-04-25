@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moonlog</title>
+	<meta name="viewport" content="initial-scale=1.0; user-scalable=yes; minimum-scale=1.0; maximum-scale=1.0" /> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link href='http://api.mobilis.co.kr/webfonts/v2/css/NanumGothicWeb' rel='stylesheet' type='text/css' />
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="flash_messages">
+    <%= flash_messages %>
+  </div>
+
+	<div id="header">
+		<div class="site_name">
+			<%= link_to SiteName, root_path %>
+		</div>
+		<div class="login_menu">
+			<% if logged_in? %>
+				<%= link_to "write", "" %>
+				&nbsp;
+				<%= link_to "[#{@current_user.login}] logout", logout_path %>
+				<%# link_to "UserInfo", user_path(@current_user) %>
+			<% else %>
+				<%= link_to "Login", login_path %>
+				<%= link_to "Signup", new_user_path %>
+			<% end %>
+		</div>
+	</div>
+
+	<div id="section">
+		<%= yield %>
+	</div>
+
+	<div id="footer">
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<h1>User Info</h1>
+<div class="general_form_wrapper">
+	<div class="field">
+		<label>id:</label>
+		<%= @user.login %>
+	</div>
+	<div class="field">
+		<label>name:</label>
+		<%= @user.name %>
+	</div>
+	<%= link_to 'Edit', edit_user_path(@user) %>
+	<%= link_to 'Home', root_path %>
+</div>

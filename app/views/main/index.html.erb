@@ -1,0 +1,15 @@
+<div class="posts_wrapper">
+	<ul class="posts">
+		<li class="post">
+			<%= image_tag "http://192.168.0.146:9000/system/screens/2013/4/8/755/1365397386/original.jpg", :width => '100%' %>
+		</li>
+		<li class="post">
+			<%= image_tag "http://192.168.0.146:9000/system/photos/2013/1/21/134/original.jpg", :width => '100%' %>
+		</li>
+		<% (1..8).each do |index| %>
+			<li class="post">
+				<%= index %>
+			</li>
+		<% end %>
+	</ul>
+</div>

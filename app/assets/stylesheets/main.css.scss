@@ -1,0 +1,173 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('http://api.mobilis.co.kr/webfonts/v2/css/NanumGothicWeb');
+
+body {
+	background:#ecf0f1;
+}
+
+.roundborder {
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+
+.clearfix {
+  zoom:1;
+  &:before, &:after {
+    content:"\0020";
+    display:block;
+    height:0;
+    overflow:hidden;
+  } &:after {
+    clear:both;
+  }
+}
+
+$full_width:1280px;
+$main_left_width:240px;
+$label_width:80px; 
+$text_field_width:120px;
+
+a {
+	text-decoration:none;
+	color:#333;
+}
+
+#flash_messages {
+	color:#aa0000;
+	background:#ffd266;
+	padding:0 5px;
+	font-family:Dotum;
+	font-weight:bold;
+	font-size:12px;
+}
+
+#header {
+	@extend .roundborder;
+	height:15px;
+	padding:15px;
+	background:#1abc9c;
+	max-width:$full_width;
+	margin:0 auto;
+	font-family:Dotum;
+	font-size:12px;
+	a {
+		color:white;
+		font-family:'NanumGothicWeb';
+	}
+}
+
+#section {
+	max-width:$full_width;
+	margin:0 auto;
+	font-family:Dotum;
+	font-size:12px;
+	color:#333;
+}
+
+#footer {
+	max-width:$full_width;
+	margin:0 auto 150px;
+	font-family:Dotum;
+	font-size:12px;
+  a#header_link {
+    position:fixed;
+    display:scroll;
+    bottom:0;
+    right:0;
+    background:#fd9242;
+    color:#000;
+    font-weight:bold;
+    font-size:12px;
+    padding:5px 15px;
+    text-decoration:none;
+    border:1px solid #ec8131;
+    opacity:0.7;
+  }
+}
+
+.form_wrapper { 
+	form {
+		@extend .clearfix;
+		.field { 
+			@extend .clearfix; 
+			padding:5px 0; 
+			line-height:150%; 
+			&.left {
+				float:left;
+			}
+			&.inline {
+				float:left;
+				padding:0;
+			}
+			label { 
+				float:left; 
+				width:$label_width; 
+				line-height:150%; 
+				color:#666; 
+			} 
+			input { 
+				font-size:12px; 
+				&.text {
+					float:left; 
+					width:$text_field_width;
+					border:1px solid #aaa;
+				}
+			} 
+			select { 
+				font-size:12px; 
+			} 
+			textarea {
+				border:1px solid #aaa;
+			}
+		} 
+		.actions { 
+			&.inline {
+				float:left;
+			}
+			input {
+				border:1px solid #333;
+				background:#444;
+				color:white;
+				font-size:12px; 
+				&.left_float_submit {
+					float:left;
+					border:1px solid #333;
+					background:#444;
+					color:white;
+				}
+			} 
+		}
+	}
+}
+
+.site_name {
+	color:white;
+	float:left;
+}
+
+.login_menu {
+	float:right;
+}
+
+.posts_wrapper {
+	@extend .clearfix;
+	ul.posts {
+		margin:0;
+		padding:0;
+		list-style:none;
+		li.post {
+			@extend .roundborder;
+			overflow:hidden;
+			float:left;
+			margin-top:10px;
+			margin-right:5px;
+			border:1px solid #ccc;
+			width:300px;
+			height:180px;
+		}
+	}
+}
