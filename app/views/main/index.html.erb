@@ -11,7 +11,7 @@
 		</li>
 		<!-- sample end -->
 
-		<% Post.all.each do |post| %>
+		<% Post.find(:all, :order => "id desc").each do |post| %>
 			<li class="post">
 				<div class="created_at">
 					<%= "#{time_ago_in_words(post.created_at)} ago" %>
