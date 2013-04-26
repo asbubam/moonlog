@@ -21,7 +21,7 @@
 		</div>
 		<div class="login_menu">
 			<% if logged_in? %>
-				<%= link_to "write", "" %>
+				<%= link_to "write", new_post_path %>
 				&nbsp;
 				<%= link_to "[#{@current_user.login}] logout", logout_path %>
 				<%# link_to "UserInfo", user_path(@current_user) %>

@@ -47,7 +47,7 @@ protected
 			render :js => "alert('Forbidden')" and return
 		else
 			flash[:notice] = "Forbidden"
-			redirect_to :back and return
+			redirect_to root_path and return
 		end
 	end
 

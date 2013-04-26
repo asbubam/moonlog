@@ -14,8 +14,11 @@
 ActiveRecord::Schema.define(:version => 20130425040609) do
 
   create_table "posts", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "user_id",    :default => 0, :null => false
+    t.string   "title",                     :null => false
+    t.text     "content",                   :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "users", :force => true do |t|

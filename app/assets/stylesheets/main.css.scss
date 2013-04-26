@@ -37,8 +37,10 @@ a {
 }
 
 #flash_messages {
+	max-width:$full_width;
+	margin:0 auto;
 	color:#aa0000;
-	background:#ffd266;
+	//background:#ffd266;
 	padding:0 5px;
 	font-family:Dotum;
 	font-weight:bold;
@@ -161,8 +163,17 @@ a {
 		padding:0;
 		list-style:none;
 		li.post {
+			background:#e7e7e7;
 			@extend .roundborder;
-			text-align:center;
+			.thumbnail {
+				text-align:center;
+				width:300px;
+				height:180px;
+			}
+			.content {
+				padding:10px;
+				text-align:left;
+			}
 			overflow:hidden;
 			float:left;
 			margin-top:10px;

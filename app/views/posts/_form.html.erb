@@ -1,0 +1,23 @@
+<div class="form_wrapper">	
+	<% if @post.errors.messages.length > 0 %>
+		<div class="error_messages">
+			<%= @post.errors.full_messages %>
+		</div>
+	<% end %>
+
+	<%= form_for @post do |f| %>
+		<div class="field">
+			<%= f.label :title, "title:" %>
+			<%= f.text_field :title, :class => "text", :autofocus => :true %>
+		</div>
+		
+		<div class="field">
+			<%= f.label :content, "content:" %>
+			<%= f.text_area :content, :class => "text long", :rows => 40, :cols => 45 %>
+		</div>
+		
+		<div class="actions">
+			<%= f.submit("submit", :class => "submit") %>
+		</div>
+	<% end %>
+</div>

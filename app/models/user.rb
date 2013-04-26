@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   before_save :salting_password
 
+	has_many :posts
+
   def self.authenticate(_login, _password)
     u = find_by_login(_login)
     u && u.password == Digest::SHA1.hexdigest("#{_password}:#{u.salt}") ? u: nil
