@@ -2,20 +2,26 @@
 	<ul class="posts">
 		<!-- sample -->
 		<li class="post">
-			<%= image_tag "http://192.168.0.146:9000/system/screens/2013/4/8/755/1365397386/original.jpg", :height => '100%' %>
+			<%= image_tag "http://image.news1.kr/system/photos/2013/4/27/447812/article.jpg", :height => '100%' %>
 		</li>
 		<li class="post">
 			<div class="thumbnail">
-				<%= image_tag "http://192.168.0.146:9000/system/photos/2013/1/21/134/original.jpg", :height => '100%' %>
+				<%= image_tag "http://image.news1.kr/system/photos/2013/4/28/448152/article.jpg", :height => '100%' %>
 			</div>
 		</li>
 		<!-- sample end -->
 
 		<% Post.find(:all, :order => "id desc").each do |post| %>
-			<li class="post">
+			<li class="post text">
 				<div class="created_at">
 					<%= "#{time_ago_in_words(post.created_at)} ago" %>
 				</div>
+				<% if @current_user && post.is_owned?(@current_user) %>
+					<div class="actions">
+						<%= link_to "edit", edit_post_path(post) %>
+						<%= link_to "del", post, :confirm => "Are you sure delete?", :method => :delete %>	
+					</div>
+				<% end %>
 				<div class="content">
 					<%= truncate(post.content, :length => 300).html_safe %>
 				</div>
