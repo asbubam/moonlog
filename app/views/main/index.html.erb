@@ -5,9 +5,7 @@
 			<%= image_tag "http://image.news1.kr/system/photos/2013/4/27/447812/article.jpg", :height => '100%' %>
 		</li>
 		<li class="post">
-			<div class="thumbnail">
-				<%= image_tag "http://image.news1.kr/system/photos/2013/4/28/448152/article.jpg", :height => '100%' %>
-			</div>
+			<%= image_tag "http://image.news1.kr/system/photos/2013/4/28/448152/article.jpg", :height => '100%' %>
 		</li>
 		<!-- sample end -->
 
@@ -16,12 +14,14 @@
 				<div class="created_at">
 					<%= "#{time_ago_in_words(post.created_at)} ago" %>
 				</div>
+
 				<% if @current_user && post.is_owned?(@current_user) %>
 					<div class="actions">
 						<%= link_to "edit", edit_post_path(post) %>
 						<%= link_to "del", post, :confirm => "Are you sure delete?", :method => :delete %>	
 					</div>
 				<% end %>
+
 				<div class="content">
 					<%= truncate(post.content, :length => 300).html_safe %>
 				</div>
